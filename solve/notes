@@ -1,0 +1,51 @@
+socket
+    .gethostbyname(hostname)
+        This method converts a hostname to the IPv4 address format.
+        The IPv4 address is returned in the form of a string.
+
+    .gethostbyname_ex(name)
+        This method converts a hostname to the IPv4 address pattern.
+        However, the advantage over the previous method is that it
+        gives all the IP addresses of the domain name. It returns a
+        tuple (hostname, canonical name, and IP_addrlist) where the
+        hostname is given by us, the canonical name is a (possibly empty)
+        list of canonical hostnames of the server for the same address,
+        and IP_addrlist is a list all teh available IPs of the same hostname.
+        Often one domain name is hosted on many IP addresses to balance
+        the load of the server. Unfortunately, this method does not work
+        for IPv6. I hope you are well acquainted with tuple, list, and
+        dictionary.
+
+    .gethostname()
+        This returns the hostname of the system where the Python interpreter
+        is currently running.
+
+    .getfqdn([name])
+        This is used to find the fully qualified name, if it's available.
+        The fully qualified domain name consists of a host and domain name;
+        for example, beta might be the hostname, and example.com might be
+        the domain name. The fully qualified domain name (FQDN) becomes
+        beta.example.com
+
+    .gethostbyaddr(ip_address)
+        This is like a "reverse" lookup for the name. It returns a tuple
+        (hostname, canonical name, and IP_addrlist) where hostname is the
+        hostname that responds to the given ip_address, the canonical name
+        is a (possibly empty) list of canonical names of the same address,
+        and IP_addrlist is a list of IP addresses for the same network
+        interface on the same host.
+
+    .getservbyname(servicename[, protocol_name])
+        This converts any protocol name to the corresponding port number. The
+        Protocol name is optional, either TCP or UDP. For example, the DNS
+        service uses TCP as well as UDP connections. If the protocol name is
+        not given, any protocol could match.
+
+    .getservbyport(port[, protocol_name])
+        This converts an Internet port number to the corresponding service
+        name. The protocol name is optional, either TCP or UDP.
+
+    .connect_ex(address)
+        This method returns an error indicator. If successful, it returns 0;
+        otherwise, it returns the errno variable. you can take advantage of
+        this function to scan the ports.

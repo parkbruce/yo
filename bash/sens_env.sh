@@ -1,0 +1,3 @@
+PI_USERNAME=pi
+PI_PASSWORD=raspberry
+

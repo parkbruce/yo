@@ -1,0 +1,43 @@
+#!/bin/bash
+
+## Comment your code!
+
+
+## Add descriptive headers to your scripts and functions
+
+# xyz.sh - Clean up project files.
+# July 10, 2015
+
+E_BADDIR=85  # No such directory
+projectdir=/home/matt/projects  # Directory to clean up.
+
+# Parameter: $target_dir
+# Return: 0 on success, $E_BADDIR if something went wrong
+
+cleanup_pfiles()
+{
+    target_dir=$1
+    if [ ! -d "$target_dir" ]; then
+        echo "$target_dir is not a directory."
+        return $E_BADDIR
+    fi
+
+    rm -f "$1"/*
+}
+
+
+## Use meaningful names for variables and functions.
+
+file_listing=`ls -al $dirname`
+
+MAXVAL=10  # All caps for constants
+
+E_NOTFOUND=95  # errorcode starts with E_ and is all caps
+
+if [ ! -e "$filename" ]; then
+    echo "File $filename not found."
+    exit $E_NOTFOUND
+fi
+
+MAIL_DIRECTORY=/var/spool/mail/matt  # env vars are ALL CAPS
+export MAIL_DIRECTORY
